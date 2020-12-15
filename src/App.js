@@ -1,8 +1,11 @@
-import './App.css';
+import './App.scss';
+
+import FlippingCard from './components/FlippingCard'
 
 function App() {
   return (
     <div className="App">
+      <FlippingCard />
     </div>
   );
 }
