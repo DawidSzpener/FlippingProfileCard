@@ -5,7 +5,23 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
   user-select: none;
 
-&__front {
+  &__front {
+    cursor: pointer;
+    position: fixed;
+    border-radius: 20px;
+    width: 250px;
+    height: 370px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 12px rgb(27, 2, 253); 
+    transition: all 1s ease;
+    border: 2px solid transparent;
+
+    &--entry-flip {
+      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+    &--exit-flip {
+      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
     &__radial-gradient {
       background: linear-gradient(to right, blue, 40%, rgb(239, 238, 243));
       box-shadow: 0 0 12px rgb(27, 2, 253);
@@ -26,7 +42,6 @@
       background-repeat: no-repeat;
       background-size: 100% 100%;
       background-position: center;
-
     }
     &__fullName {
       position: fixed;
@@ -52,9 +67,18 @@
     width: 250px;
     height: 370px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 12px rgb(27, 2, 253);
+    box-shadow: 0 0 12px rgb(27, 2, 253); 
+    transition: all 1s ease;
+    border: 2px solid transparent;
 
+    &--entry-flip {
+      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
+    &--exit-flip {
+      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    }
     &__arrow {
+      cursor: pointer;
       float: left;
       border: none;
       background-color: white;
@@ -62,7 +86,14 @@
       margin-top: 5px;
       font-size: 1.3rem;
       color: rgb(27, 2, 253);
-
+      &:active {
+        border: none;
+        outline: 0;
+      }
+      &:focus {
+        border: none;
+        outline: 0;
+      }
     }
     &__roundPicture {
       display: block;
@@ -85,7 +116,6 @@
       margin-top: 0px;
       color: black;
       font-size: 0.8rem;
-
     }
     &__description {
       clear: both;
@@ -93,7 +123,6 @@
       color: black;
       font-size: 0.8rem;
       padding: 0 30px;
-
     }
     &__button {
       display: block;
@@ -126,3 +155,67 @@
     }
   }
 }
+
+@keyframes entry-flip {
+  0% {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  69% {
+    opacity: 0;
+    transform: rotateY(-90deg);
+  }
+  70% {
+    opacity: 1;    
+    border: 2px solid black;
+    transform:translate(-30px, 0px);
+    transform: rotateY(-90deg);
+    box-shadow: 30px 15px 20px rgb(4, 4, 12);
+  }
+  85% {   
+    border: 2px solid black;
+    box-shadow: 30px 15px 20px rgb(4, 4, 12);
+    transform:translate(-30px, 0px);
+  }
+  100% {
+    border: 2px solid transparent;
+    box-shadow: 0px 0px 12px rgb(27, 2, 253);
+    transform:translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes exit-flip {
+  0% {
+    transform: rotateY(0); 
+    transform:translate(0, 0);
+    opacity: 1;
+    box-shadow: 30px 25p 32px rgb(27, 2, 253);
+    border: 2px solid transparent;
+  }
+  30% {   
+    transform:translate(-30px,-15px);
+    box-shadow: 30px 25px 60px rgb(4, 3, 8);
+    border: 2px solid black;
+  }
+  60% {
+    box-shadow: 3px 3px 10px rgb(1, 1, 3);
+  }
+  69% {
+    box-shadow: 0px 0px 0px rgb(2, 2, 5);
+    transform:translate(-30px,-15px);
+    opacity: 1;
+    transform: rotateY(-90deg);
+  }
+  70% {
+    transform:translate(-30px,-15px);
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform:translate(0, 0);
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+}
+
