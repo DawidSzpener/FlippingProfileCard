@@ -11,6 +11,7 @@ const FlippingCard = (props) => {
   if(isLeftSide){
     card = 
       <div className="flippingCard__left"  onClick={() => setIsLeftSide(!isLeftSide)}>
+        <div className="flippingCard__left__radial-gradient"/>
         <div className="flippingCard__left__background" style={{backgroundImage: `url(${props.picture})`}} />
         <div className="flippingCard__left__fullName">{props.fullName}</div>
         <div className="flippingCard__left__miniTitle">{props.miniTitle}</div>

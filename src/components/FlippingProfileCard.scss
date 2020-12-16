@@ -1,11 +1,20 @@
 .flippingCard {
   width: 250px;
   height: 370px;
-  background-color: pink;
   border-radius: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
 
-
-  &__left {
+&__left {
+    &__radial-gradient {
+      background: linear-gradient(to right, blue, rgb(186, 179, 243));
+      box-shadow: 0 0 30px rgb(27, 2, 253);
+      width: 250px;
+      height: 370px;
+      z-index: 2;
+      position: fixed;
+      border-radius: 20px;
+      opacity: 0.4;
+    }
     &__background {
       z-index: 1;
       position: fixed;
@@ -32,11 +41,12 @@
       margin-top: 325px;
       margin-left: 20px;
       color: white;
-      font-size: 0.77rem;
+      font-size: 0.7rem;
     }
   }
 
   &__right {
+
     &__roundPicture {
 
     }
