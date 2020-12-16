@@ -17,7 +17,7 @@ function App() {
       <div style={{float: 'left', marginLeft: '8%'}}>
         <FlippingCard 
           picture={img}
-          fullName="DAWID SZPENER"
+          fullName="Dawid Szpener"
           miniTitle="Software Engineer"
           description="Jestem Dawid, od 2 lat ucze sie programowac, lubie gotowac i spedzac czas z Ola"
         />
