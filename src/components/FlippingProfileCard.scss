@@ -287,6 +287,7 @@
     transform: rotateY(-90deg);
   }
   70% {
+    z-index: 5;
     opacity: 1;    
     border: 2px solid transparent;
     transform: translate(-20px, -5px);
@@ -331,6 +332,7 @@
     opacity: 0;
   }
   100% {
+    z-index: 5;
     transform: translate(0, 0);
     transform: rotateY(-90deg);
     opacity: 0;
