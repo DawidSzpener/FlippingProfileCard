@@ -15,6 +15,7 @@
     box-shadow: 0 0 12px rgb(27, 2, 253); 
     transition: all 1s ease;
     border: 2px solid transparent;
+    z-index: 1;
 
     &--entry-flip {
       animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;

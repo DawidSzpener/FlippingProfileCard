@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import './FlippingProfileCard.scss'
 
@@ -8,19 +8,31 @@ const FlippingCard = (props) => {
   const [frontSideClass, setFrontSideClass] = useState(["flippingCard__front"])
   const [backSideCLass, setBackSideClass] = useState(["flippingCard__back"])
 
-  useEffect(() => {
-    if(isFrontSide) {
-      setFrontSideClass(["flippingCard__front", "flippingCard__front--entry-flip"])
-      setBackSideClass(["flippingCard__back", "flippingCard__back--exit-flip"])
-    } else if (isFrontSide) {
-      setFrontSideClass(["flippingCard__front"])
-      setBackSideClass(["flippingCard__back"])
-    } else {
-      setBackSideClass(["flippingCard__back", "flippingCard__back--entry-flip"])
-      setFrontSideClass(["flippingCard__front", "flippingCard__front--exit-flip"])
-    }
 
-  }, [isFrontSide])
+  const useIsMount = () => {
+    const isMountRef = useRef(true);
+    useEffect(() => {
+      isMountRef.current = false;
+    }, []);
+    return isMountRef.current;
+  };
+
+  const isMount = useIsMount();
+
+  useEffect(() => {
+    if (isMount) {
+      console.log('First Render');
+    } else {
+      console.log('Subsequent Render');
+      if(isFrontSide) {
+        setFrontSideClass(["flippingCard__front", "flippingCard__front--entry-flip"])
+        setBackSideClass(["flippingCard__back", "flippingCard__back--exit-flip"])
+      } else {
+        setBackSideClass(["flippingCard__back", "flippingCard__back--entry-flip"])
+        setFrontSideClass(["flippingCard__front", "flippingCard__front--exit-flip"])
+      }
+    }
+  }, [isFrontSide, isMount])
 
   let frontSideOpacity = 0
   let backSideOpacity = 0
