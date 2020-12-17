@@ -17,22 +17,22 @@
     z-index: 1;
 
     &--blue {
-      box-shadow: 0 0 12px rgb(27, 2, 253); 
+      box-shadow: 0 0 8px rgb(27, 2, 253); 
     }
     &--black {
-      box-shadow: 0 0 12px rgb(1, 0, 2); 
+      box-shadow: 0 0 8px rgb(1, 0, 2); 
     }
     &--red {
-      box-shadow: 0 0 12px rgb(253, 2, 23); 
+      box-shadow: 0 0 8px rgb(253, 2, 23); 
     }
     &--green {
-      box-shadow: 0 0 12px rgb(2, 155, 10); 
+      box-shadow: 0 0 8px rgb(2, 155, 10); 
     }
     &--entry-flip {
-      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
+      animation: entry-flip 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &--exit-flip {
-      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
+      animation: exit-flip 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &__radial-gradient {        
       width: 250px;
@@ -97,22 +97,22 @@
     border: 2px solid transparent;
 
     &--blue {
-      box-shadow: 0 0 12px rgb(27, 2, 253); 
+      box-shadow: 0 0 8px rgb(27, 2, 253); 
     }
     &--black {
-      box-shadow: 0 0 12px rgb(1, 0, 2); 
+      box-shadow: 0 0 8px rgb(1, 0, 2); 
     }
     &--red {
-      box-shadow: 0 0 12px rgb(253, 2, 23); 
+      box-shadow: 0 0 8px rgb(253, 2, 23); 
     }
     &--green {
-      box-shadow: 0 0 12px rgb(2, 155, 10); 
+      box-shadow: 0 0 8px rgb(2, 155, 10); 
     }
     &--entry-flip {
-      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
+      animation: entry-flip 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &--exit-flip {
-      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
+      animation: exit-flip 1.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &__arrow {
       cursor: pointer;
@@ -209,6 +209,7 @@
       position: absolute;
       bottom: 20px;
       outline: 0;
+      
       &--blue {
         background-color: rgb(144, 133, 240);
         border-color: rgb(27, 2, 253);
@@ -289,29 +290,29 @@
   70% {
     opacity: 1;    
     border: 2px solid transparent;
-    transform:translate(-20px, -5px);
+    transform: translate(-20px, -5px);
     transform: rotateY(-90deg);
     box-shadow: 30px 10px 20px rgb(4, 4, 12);
   }
   85% {   
     box-shadow: 30px 15px 20px rgb(4, 4, 12);
-    transform:translate(-20px, -5px);
+    transform: translate(-20px, -5px);
   }
   100% {
-    box-shadow: 0px 0px 12px rgb(5, 4, 8);
-    transform:translate(0, 0);
+    box-shadow: 0px 0px 8px rgb(5, 4, 8);
+    transform: translate(0, 0);
   }
 }
 
 @keyframes exit-flip {
   0% {
     transform: rotateY(0); 
-    transform:translate(0, 0);
+    transform: translate(0, 0);
     opacity: 1;
     border: 2px solid transparent;
   }
   30% {   
-    transform:translate(-50px,-15px);
+    transform: translate(-50px,-15px);
     box-shadow: 20px 25px 60px rgb(4, 3, 8);
   }
   50% {
@@ -322,16 +323,16 @@
   }
   69% {
     box-shadow: 0px 0px 0px rgb(2, 2, 5);
-    transform:translate(-30px,-15px);
+    transform: translate(-30px,-15px);
     transform: rotateY(-90deg);
   }
   70% {
-    transform:translate(-30px,-15px);
+    transform: translate(-30px,-15px);
     transform: rotateY(-90deg);
     opacity: 0;
   }
   100% {
-    transform:translate(0, 0);
+    transform: translate(0, 0);
     transform: rotateY(-90deg);
     opacity: 0;
   }
