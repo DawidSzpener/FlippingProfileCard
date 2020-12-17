@@ -8,7 +8,7 @@
 
 - clonse this repo
 - extract ```FlippingCard.js``` and ```FlippingCard.scss``` files to your own project
-- you need to have sass installed as one of your projects dependency ```npm install sass`
+- you need to have sass installed as one of your projects dependency ```npm install sass```
 
 ## USAGE
 
