@@ -12,25 +12,50 @@
     width: 250px;
     height: 370px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 12px rgb(27, 2, 253); 
     transition: all 1s ease;
     border: 2px solid transparent;
     z-index: 1;
 
+    &--blue {
+      box-shadow: 0 0 12px rgb(27, 2, 253); 
+    }
+    &--black {
+      box-shadow: 0 0 12px rgb(1, 0, 2); 
+    }
+    &--red {
+      box-shadow: 0 0 12px rgb(253, 2, 23); 
+    }
+    &--green {
+      box-shadow: 0 0 12px rgb(2, 155, 10); 
+    }
     &--entry-flip {
-      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &--exit-flip {
-      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
-    &__radial-gradient {
-      background: linear-gradient(to right, blue, 40%, rgb(239, 238, 243));
-      box-shadow: 0 0 12px rgb(27, 2, 253);
+    &__radial-gradient {        
       width: 250px;
       height: 370px;
       z-index: 1;
       position: fixed;
       border-radius: 20px;
+      &--blue {
+        background: linear-gradient(to right, blue, 40%, rgb(239, 238, 243));
+        box-shadow: 0 0 12px rgb(27, 2, 253);
+      }
+      &--red {
+        background: linear-gradient(to right, rgb(255, 0, 0), 40%, rgb(243, 238, 238));
+        box-shadow: 0 0 12px rgb(253, 2, 23);
+      }
+      &--black {
+        background: linear-gradient(to right, rgb(7, 3, 3), 40%, rgb(243, 238, 238));
+        box-shadow: 0 0 12px rgb(2, 1, 1);
+      }
+      &--green {
+        background: linear-gradient(to right, rgb(4, 167, 4), 40%, rgb(239, 243, 238));
+        box-shadow: 0 0 12px rgb(4, 167, 4);
+      }
     }
     &__background {
       opacity: 0.55;
@@ -68,15 +93,26 @@
     width: 250px;
     height: 370px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 12px rgb(27, 2, 253); 
     transition: all 1s ease;
     border: 2px solid transparent;
 
+    &--blue {
+      box-shadow: 0 0 12px rgb(27, 2, 253); 
+    }
+    &--black {
+      box-shadow: 0 0 12px rgb(1, 0, 2); 
+    }
+    &--red {
+      box-shadow: 0 0 12px rgb(253, 2, 23); 
+    }
+    &--green {
+      box-shadow: 0 0 12px rgb(2, 155, 10); 
+    }
     &--entry-flip {
-      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      animation: entry-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &--exit-flip {
-      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      animation: exit-flip 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) backwards;
     }
     &__arrow {
       cursor: pointer;
@@ -86,7 +122,6 @@
       margin-left: 10px;
       margin-top: 5px;
       font-size: 1.3rem;
-      color: rgb(27, 2, 253);
       &:active {
         border: none;
         outline: 0;
@@ -94,6 +129,18 @@
       &:focus {
         border: none;
         outline: 0;
+      }
+      &--blue {
+        color: rgb(27, 2, 253);
+      }
+      &--black {
+        color: rgb(1, 8, 3);
+      }
+      &--red {
+        color: rgb(253, 2, 23);
+      }
+      &--green {
+        color: rgb(4, 138, 10);
       }
     }
     &__roundPicture {
@@ -103,14 +150,35 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 2px solid rgb(27, 2, 253);
+      &--blue {
+        border: 2px solid rgb(27, 2, 253);
+      }
+      &--black {
+        border: 2px solid rgb(5, 4, 8);
+      }
+      &--red {
+        border: 2px solid rgb(253, 2, 2);
+      }
+      &--green {
+        border: 2px solid rgb(4, 167, 4);
+      }
     }
     &__fullName {
+      font-size: 1.5rem;
       clear: both;
       margin-top: 10px;
-      color: black;
-      font-size: 1.5rem;
-      color: rgb(27, 2, 253);
+      &--blue {
+        color: rgb(27, 2, 253);
+      }
+      &--black {
+        color: rgb(1, 1, 7);
+      }
+      &--red {
+        color: rgb(253, 2, 2);
+      }
+      &--green {
+        color: rgb(4, 167, 4);
+      }
     }
     &__miniTitle {
       clear: both;
@@ -127,15 +195,12 @@
     }
     &__button {
       display: block;
-      background-color: rgb(144, 133, 240);
       position: fixed; 
       width: 150px;
       margin-left: 50px;
       height: auto;
       border-width: 2px;
       border-style: solid;
-      border-color: rgb(27, 2, 253);
-      color: white;
       cursor: pointer;
       font-size: 16px;
       padding: 3px 9px;
@@ -143,15 +208,70 @@
       border-radius: 10px;
       position: absolute;
       bottom: 20px;
-    
-      &:focus {
-        background-color: rgb(27, 2, 253);
-        box-shadow: 0 0 0 4px  rgb(162, 153, 245);
+      outline: 0;
+      &--blue {
+        background-color: rgb(144, 133, 240);
+        border-color: rgb(27, 2, 253);
         color: white;
+    
+        &:focus {
+          background-color: rgb(27, 2, 253);
+          box-shadow: 0 0 0 4px  rgb(162, 153, 245);
+          border-color: rgb(231, 231, 235);
+          color: white;
+        }
+        &:hover {
+          background-color: rgb(27, 2, 253);
+          color:  rgb(250, 249, 249);
+        }
       }
-      &:hover {
-        background-color: rgb(27, 2, 253);
-        color:  rgb(250, 249, 249);
+      &--black {
+        background-color: rgb(124, 124, 128);
+        border-color: rgb(4, 4, 7);
+        color: white;
+    
+        &:focus {
+          background-color: rgb(2, 2, 3);
+          box-shadow: 0 0 0 4px  rgb(6, 5, 7);
+          border-color: rgb(231, 231, 235);
+          color: white;
+        }
+        &:hover {
+          background-color: rgb(5, 5, 5);
+          color:  rgb(250, 249, 249);
+        }
+      }
+      &--red {
+        background-color: rgb(240, 133, 133);
+        border-color: rgb(253, 2, 56);
+        color: white;
+    
+        &:focus {
+          background-color: rgb(253, 2, 65);
+          box-shadow: 0 0 0 4px  rgb(245, 153, 161);
+          color: white;
+          border-color: rgb(231, 231, 235);
+        }
+        &:hover {
+          background-color: rgb(253, 2, 2);
+          color:  rgb(250, 249, 249);
+        }
+      }
+      &--green {
+        background-color: rgb(39, 160, 75);
+        border-color: rgb(1, 99, 1);
+        color: white;
+    
+        &:focus {
+          background-color: rgb(1, 99, 1);
+          box-shadow: 0 0 0 4px  rgb(4, 167, 4);
+          color: white;
+          border-color: rgb(231, 231, 235);
+        }
+        &:hover {
+          background-color: rgb(1, 99, 1);
+          color:  rgb(250, 249, 249);
+        }
       }
     }
   }
@@ -168,19 +288,17 @@
   }
   70% {
     opacity: 1;    
-    border: 2px solid rgb(27, 2, 253);
+    border: 2px solid transparent;
     transform:translate(-20px, -5px);
     transform: rotateY(-90deg);
     box-shadow: 30px 10px 20px rgb(4, 4, 12);
   }
   85% {   
-    border: 2px solid rgb(27, 2, 253);
     box-shadow: 30px 15px 20px rgb(4, 4, 12);
     transform:translate(-20px, -5px);
   }
   100% {
-    border: 2px solid transparent;
-    box-shadow: 0px 0px 12px rgb(27, 2, 253);
+    box-shadow: 0px 0px 12px rgb(5, 4, 8);
     transform:translate(0, 0);
   }
 }
@@ -195,7 +313,6 @@
   30% {   
     transform:translate(-50px,-15px);
     box-shadow: 20px 25px 60px rgb(4, 3, 8);
-    border: 2px solid rgb(27, 2, 253);
   }
   50% {
     opacity: 1;

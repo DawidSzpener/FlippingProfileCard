@@ -4,10 +4,17 @@ import './FlippingProfileCard.scss'
 
 const FlippingCard = (props) => {
 
-  const [isFrontSide, setIsFrontSide] = useState(true)
-  const [frontSideClass, setFrontSideClass] = useState(["flippingCard__front"])
-  const [backSideCLass, setBackSideClass] = useState(["flippingCard__back"])
+  let theme = null
 
+  if(props.theme) {
+    theme = props.theme
+  } else {
+    theme = 'blue'
+  }
+
+  const [isFrontSide, setIsFrontSide] = useState(true)
+  const [frontSideClass, setFrontSideClass] = useState(["flippingCard__front", `flippingCard__front--${theme}`])
+  const [backSideCLass, setBackSideClass] = useState(["flippingCard__back", `flippingCard__back--${theme}`])
 
   const useIsMount = () => {
     const isMountRef = useRef(true);
@@ -25,14 +32,14 @@ const FlippingCard = (props) => {
     } else {
       console.log('Subsequent Render');
       if(isFrontSide) {
-        setFrontSideClass(["flippingCard__front", "flippingCard__front--entry-flip"])
-        setBackSideClass(["flippingCard__back", "flippingCard__back--exit-flip"])
+        setFrontSideClass(["flippingCard__front", `flippingCard__front--${theme}`, "flippingCard__front--entry-flip"])
+        setBackSideClass(["flippingCard__back", `flippingCard__back--${theme}`, "flippingCard__back--exit-flip"])
       } else {
-        setBackSideClass(["flippingCard__back", "flippingCard__back--entry-flip"])
-        setFrontSideClass(["flippingCard__front", "flippingCard__front--exit-flip"])
+        setBackSideClass(["flippingCard__back", `flippingCard__back--${theme}`, "flippingCard__back--entry-flip"])
+        setFrontSideClass(["flippingCard__front", `flippingCard__front--${theme}`, "flippingCard__front--exit-flip"])
       }
     }
-  }, [isFrontSide, isMount])
+  }, [isFrontSide, isMount, theme])
 
   let frontSideOpacity = 0
   let backSideOpacity = 0
@@ -47,7 +54,7 @@ const FlippingCard = (props) => {
 
   let frontSide = 
   <div className={frontSideClass.join(' ')} style={{opacity: frontSideOpacity}}  onClick={() => setIsFrontSide(!isFrontSide)}>
-    <div className="flippingCard__front__radial-gradient"/>
+    <div className={`flippingCard__front__radial-gradient flippingCard__front__radial-gradient--${theme}`}/>
     <div className="flippingCard__front__background" style={{backgroundImage: `url(${props.picture})`}} />
     <div className="flippingCard__front__fullName">{props.fullName}</div>
     <div className="flippingCard__front__miniTitle">{props.miniTitle}</div>
@@ -55,12 +62,12 @@ const FlippingCard = (props) => {
   
   let backSide = 
     <div className={backSideCLass.join(' ')} style={{opacity: backSideOpacity}}>
-      <button className="flippingCard__back__arrow"  onClick={() => setIsFrontSide(!isFrontSide)}>⬅</button>
-      <img className="flippingCard__back__roundPicture" alt="background" src={props.picture} />
-      <div className="flippingCard__back__fullName">{props.fullName}</div>
+      <button className={`flippingCard__back__arrow flippingCard__back__arrow--${theme}`}  onClick={() => setIsFrontSide(!isFrontSide)}>⬅</button>
+      <img className={`flippingCard__back__roundPicture flippingCard__back__roundPicture--${theme}`} alt="background" src={props.picture} />
+      <div className={`flippingCard__back__fullName flippingCard__back__fullName--${theme}`}>{props.fullName}</div>
       <div className="flippingCard__back__miniTitle">{props.miniTitle}</div>
       <div className="flippingCard__back__description">{props.description}</div>
-      <button className="flippingCard__back__button">Follow</button>
+      <button className={`flippingCard__back__button flippingCard__back__button--${theme}`}>Follow</button>
     </div>
   
   return (
