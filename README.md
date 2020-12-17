@@ -2,7 +2,7 @@
 
 ## DEMO 
 
-![demo]()
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/giphy.gif)
 
 ## INSTALLATION 
 
@@ -14,12 +14,12 @@
 
 Available props: 
 
-![demo]()
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/props.png)
 
 - theme (black, blue, red, green)
 - the rest is self explanatory 
 
-![demo]()
-![demo]()
-![demo]()
-![demo]()
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/black.png)
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/red.png)
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/blue.png)
+![demo](https://github.com/DawidSzpener/FlippingProfileCard/blob/main/src/assets/images/green.png)
