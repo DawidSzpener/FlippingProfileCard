@@ -43,17 +43,23 @@ const FlippingCard = (props) => {
 
   let frontSideOpacity = 0
   let backSideOpacity = 0
+  let frontSideZIndex = 0
+  let backSideZIndex = 0
 
   if(isFrontSide){
     frontSideOpacity = 1
     backSideOpacity = 0
+    frontSideZIndex = 1
+    backSideZIndex = 0
   } else {
     frontSideOpacity = 0
+    frontSideZIndex = 0
+    backSideZIndex = 1
     backSideOpacity = 1
   }
 
   let frontSide = 
-  <div className={frontSideClass.join(' ')} style={{opacity: frontSideOpacity}}  onClick={() => setIsFrontSide(!isFrontSide)}>
+  <div className={frontSideClass.join(' ')} style={{opacity: frontSideOpacity, zIndex: frontSideZIndex}}  onClick={() => setIsFrontSide(!isFrontSide)}>
     <div className={`flippingCard__front__radial-gradient flippingCard__front__radial-gradient--${theme}`}/>
     <div className="flippingCard__front__background" style={{backgroundImage: `url(${props.picture})`}} />
     <div className="flippingCard__front__fullName">{props.fullName}</div>
@@ -61,13 +67,13 @@ const FlippingCard = (props) => {
   </div>
   
   let backSide = 
-    <div className={backSideCLass.join(' ')} style={{opacity: backSideOpacity}}>
+    <div className={backSideCLass.join(' ')} style={{opacity: backSideOpacity, zIndex: backSideZIndex}}>
       <button className={`flippingCard__back__arrow flippingCard__back__arrow--${theme}`}  onClick={() => setIsFrontSide(!isFrontSide)}>⬅</button>
       <img className={`flippingCard__back__roundPicture flippingCard__back__roundPicture--${theme}`} alt="background" src={props.picture} />
       <div className={`flippingCard__back__fullName flippingCard__back__fullName--${theme}`}>{props.fullName}</div>
       <div className="flippingCard__back__miniTitle">{props.miniTitle}</div>
       <div className="flippingCard__back__description">{props.description}</div>
-      <button className={`flippingCard__back__button flippingCard__back__button--${theme}`}>Follow</button>
+      <button className={`flippingCard__back__button flippingCard__back__button--${theme}`} onClick={() => console.log('Follow')}>Follow</button>
     </div>
   
   return (
