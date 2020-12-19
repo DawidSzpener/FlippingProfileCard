@@ -1,7 +1,7 @@
 import './App.scss';
 import img from './assets/images/dawid.jpg'
 
-import FlippingCard from './components/FlippingProfileCard'
+import FlippingCard from './components/FlippingProfileCard/FlippingProfileCard'
 
 function App() {
   return (
