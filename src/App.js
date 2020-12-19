@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div style={{float: 'left'}}>
         <FlippingCard 
-          theme="green"
+          theme="black"
           picture={img}
           fullName="Dawid Szpener"
           miniTitle="Software Engineer"
@@ -18,6 +18,24 @@ function App() {
       <div style={{float: 'left', marginLeft: '4%'}}>
         <FlippingCard 
           theme="green"
+          picture={img}
+          fullName="Dawid Szpener"
+          miniTitle="Software Engineer"
+          description="Jestem Dawid, od 2 lat ucze sie programowac, lubie gotowac i spedzac czas z Ola"
+        />
+      </div>
+      <div style={{float: 'left', marginLeft: '4%'}}>
+        <FlippingCard 
+          theme="red"
+          picture={img}
+          fullName="Dawid Szpener"
+          miniTitle="Software Engineer"
+          description="Jestem Dawid, od 2 lat ucze sie programowac, lubie gotowac i spedzac czas z Ola"
+        />
+      </div>
+      <div style={{float: 'left', marginLeft: '4%'}}>
+        <FlippingCard 
+          theme="blue"
           picture={img}
           fullName="Dawid Szpener"
           miniTitle="Software Engineer"

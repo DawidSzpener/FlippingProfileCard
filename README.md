@@ -7,8 +7,10 @@
 ## INSTALLATION 
 
 - clonse this repo
-- extract ```FlippingCard.js``` and ```FlippingCard.scss``` files to your own project
-- you need to have sass installed as one of your projects dependency ```npm install sass`
+- extract ```FlippingProfileCard``` folder to your projects directory
+- import ```FlippingProfileCard``` file wherever you want to use it ```import FlippingProfileCard from '*path'```
+- you need to have sass installed as one of your projects dependency ```npm install sass```
+- if using webpack make sure your loader can preprocess scss files
 
 ## USAGE
 
